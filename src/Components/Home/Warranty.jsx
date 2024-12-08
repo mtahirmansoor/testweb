@@ -11,7 +11,7 @@ const Warranty = () => {
 
       {/* Warranty Details */}
       <section className="mb-8">
-        <h2 className="text-2xl font-bold mb-4">Warranty Details</h2>
+        <h2 className="text-2xl font-bold mb-4 items-center">Warranty Details</h2>
         <p>
           We offer a comprehensive warranty on all our products. This warranty covers any defects in material or workmanship under normal use for a period of [Warranty Period]. If you experience any issues, please contact us for support.
         </p>
@@ -22,7 +22,7 @@ const Warranty = () => {
 
       {/* More Details */}
       <section className="mb-8">
-        <h2 className="text-2xl font-bold mb-4">More Details</h2>
+        <h2 className="text-2xl font-bold mb-4 justify-center">More Details</h2>
         <p>
           For detailed information on our warranty policies, please refer to our official warranty guide. Coverage includes parts and labor for defects under normal usage. Exclusions apply for damages caused by misuse, accident, or unauthorized repairs.
         </p>

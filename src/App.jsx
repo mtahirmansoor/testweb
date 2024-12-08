@@ -5,8 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Navbar from "./Components/Navbar";
-import Header from "./Components/Home/Header";
-import About from "./Components/Home/About";
+import HeaderAndAbout from "./Components/Home/Header";
 import Footer from "./Components/Footer";
 import Contact from "./Components/Home/Contact";
 import Login from './Components/Home/Login';
@@ -20,6 +19,7 @@ import MoreInfo from "./Components/Home/MoreInfo";
 import AddCar from "./Components/Admin/AddCars";
 import CarList from "./Components/Admin/CarsList";
 import EditCar from "./Components/Admin/EditCars";
+import ScrollToTop from "./components/Home/ScrollToTop";
 // Dummy Components for Stock and Finance Pages
 
 function App() {
@@ -36,11 +36,13 @@ function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
         <Navbar />
         
         <Routes>
+          
           {/* Home route to display Header and About */}
-          <Route path="/" element={<><Header /><About /></>} />
+          <Route path="/" element={<><HeaderAndAbout/></>} />
           
           {/* Other routes */}
           <Route path="/finance" element={<Finance />} />

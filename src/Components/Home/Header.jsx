@@ -1,14 +1,18 @@
 import React from "react";
-import Image1 from "../../assets/Logo/Logow.jpg"; // Replace this with your desired image
-import Image2 from "../../assets/Header/image2.jpg"; // Replace this with your desired image
-import Image3 from "../../assets/Header/image3.jpg"; // Replace this with your desired image
-
 import { FaCar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
-// Slider settings as you mentioned
-const settings = {
+// Import images
+import Image1 from "../../assets/Logo/Logow.jpg";
+import Image2 from "../../assets/Header/image2.jpg";
+import Image3 from "../../assets/Header/image3.jpg";
+import financeImage from "../../assets/Header/finance.jpg";
+import stockImage from "../../assets/Header/sellcar.jpg";
+import Image from "../../assets/Car/image1.jpeg";
+
+// Slider settings
+const sliderSettings = {
   dots: true,
   infinite: true,
   speed: 500,
@@ -63,59 +67,109 @@ const Location = () => (
   </div>
 );
 
-const Header = () => {
+const HeaderAndAbout = () => {
   return (
-    <header className="relative w-full h-auto overflow-hidden">
-      {/* Blue Background with Phone Number */}
-      <div className="bg-red-600 text-white text-center p-3 z-10 relative">
-        <span className="text-sm sm:text-lg font-semibold">
-          Call us now:{" "}
-          <a href="tel:+44 7398 524761" className="text-white hover:underline">
-            +44 7398 524761
-          </a>
-        </span>
-      </div>
+    <div>
+      {/* Header Section */}
+      <header className="relative w-full h-auto overflow-hidden">
+        {/* Blue Background with Phone Number */}
+        <div className="bg-red-600 text-white text-center p-3 z-10 relative">
+          <span className="text-sm sm:text-lg font-semibold">
+            Call us now:{" "}
+            <a href="tel:+44 7398 524761" className="text-white hover:underline">
+              +44 7398 524761
+            </a>
+          </span>
+        </div>
+        <div className="relative w-full h-[500px] sm:h-[600px] md:h-[650px] lg:h-[700px]">
+  <Slider {...sliderSettings}>
+    <div className="w-full h-full flex items-center justify-center">
+      <img
+        src={Image1}
+        alt="Header Image"
+        className="w-full h-full object-cover"  // Ensures the logo fits the container with object-cover
+        style={{ aspectRatio: '16/9' }} // Force the logo into a 16:9 ratio
+      />
+    </div>
+    <div className="w-full h-full flex items-center justify-center">
+      <img
+        src={Image2}
+        alt="Slide 2"
+        className="w-full h-full object-cover"  // Ensures other images take the same height
+        style={{ aspectRatio: '16/9' }} // Force the same aspect ratio for consistency
+      />
+    </div>
+    <div className="w-full h-full flex items-center justify-center">
+      <img
+        src={Image3}
+        alt="Slide 3"
+        className="w-full h-full object-cover"  // Ensures other images take the same height
+        style={{ aspectRatio: '16/9' }} // Force the same aspect ratio for consistency
+      />
+    </div>
+  </Slider>
 
-      {/* Slider Section */}
-      <div className="relative w-full h-3/4 sm:h-3/4 md:h-2/3 lg:h-2/3">
-        <Slider {...settings}>
-          {/* Slide 1 */}
-          <div>
-            <img
-              src={Image1} // Replace with your desired image
-              alt="Header Image"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          {/* Add more slides as needed */}
-          <div>
-            <img
-              src={Image2} // Replace with your image
-              alt="Slide 2"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div>
-            <img
-              src={Image3} // Replace with your image
-              alt="Slide 3"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </Slider>
-        {/* Tagline placed on top of the image */}
-        <Tagline />
-      </div>
+  {/* Tagline placed on top of the image */}
+  <Tagline />
+</div>
 
-      {/* Location Text Below Image */}
-      <Location />
 
-      {/* Timings Section */}
-      <div className="relative z-10 mt-8 sm:mt-12 lg:mt-16 px-4 mb-16 sm:mb-20 lg:mb-24">
-        <WeeklySchedule />
+
+        {/* Location Text Below Image */}
+        <Location />
+
+        {/* Timings Section */}
+        <div className="relative z-10 mt-8 sm:mt-12 lg:mt-16 px-4 mb-16 sm:mb-20 lg:mb-24">
+          <WeeklySchedule />
+        </div>
+      </header>
+
+      {/* About Section */}
+      <div className="flex flex-col items-center py-8">
+        {/* Heading */}
+        <h2 className="text-3xl font-bold mb-6">About Us</h2>
+        <div className="flex flex-wrap justify-center sm:justify-evenly max-w-[1200px] pt-2">
+          {/* Stock Section */}
+          <Link to="/stock">
+            <div className="flex flex-col items-start max-w-[420px] h-[300px] m-4 p-4 bg-white rounded-lg shadow-lg cursor-pointer">
+              <p className="font-bold text-[18px] mb-2">Browse all stock</p>
+              <img
+                src={Image}
+                alt="Stock"
+                className="w-full h-40 object-cover rounded-md mt-2"
+              />
+            </div>
+          </Link>
+
+          {/* Finance Section */}
+          <Link to="/finance">
+            <div className="flex flex-col items-start max-w-[420px] h-[300px] m-4 p-4 bg-white rounded-lg shadow-lg cursor-pointer">
+              <p className="font-bold text-[18px] text-black mb-2">Finance</p>
+              <img
+                src={financeImage}
+                alt="Finance Insights"
+                className="w-full h-40 object-cover rounded-md mt-2"
+              />
+            </div>
+          </Link>
+
+          {/* SellCar Section */}
+          <Link to="/SellYourCar">
+            <div className="flex flex-col items-start max-w-[420px] h-[300px] m-4 p-4 bg-white rounded-lg shadow-lg cursor-pointer">
+              <p className="font-bold text-[18px] text-black mb-2">
+                Sell Your Car
+              </p>
+              <img
+                src={stockImage}
+                alt="Sell Car"
+                className="w-full h-40 object-cover rounded-md mt-2"
+              />
+            </div>
+          </Link>
+        </div>
       </div>
-    </header>
+    </div>
   );
 };
 
-export default Header;
+export default HeaderAndAbout;

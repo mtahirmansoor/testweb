@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo/Logow.jpg"; // Update with your actual logo path
-import Image from "../../assets/Header/image2.jpg"; // Path to your image
+import financeImage from "../../assets/Header/finance.jpg";
 
 const Finance = () => {
   return (
@@ -26,7 +26,7 @@ const Finance = () => {
         {/* Location Image */}
         <div className="mb-4">
           <img
-            src={Image} // Your image path
+            src={financeImage} // Your image path
             alt="Image"
             className="mx-auto w-full max-w-md rounded-md" // Adjust styling as needed
           />
